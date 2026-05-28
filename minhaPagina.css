@@ -1,0 +1,80 @@
+html {
+  scroll-padding-top: 80px; /* Define um recuo para compensar a altura da navbar */
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-principal: #FDFBF7;
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --transition-speed: 0.3s;
+}
+
+body {
+  background-color: var(--bg-principal);
+  font-family: 'Roboto', sans-serif;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+nav img {
+  width: 60px;
+  border-radius: 2rem;
+}
+
+.navbar {
+  transition: background-color var(--transition-speed);
+  background-color: rgba(33, 37, 41, 0.95) !important;
+  backdrop-filter: blur(5px);
+}
+
+section { padding: 40px 0; }
+
+/* Botão de topo */
+
+#btnTopo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+#btnTopo:hover {
+  background-color: #10f2a7;
+  transform: translateY(-5px);
+}
+
+/* Cards e Efeitos */
+.card {
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  border: none;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+.card img {
+  transition: transform var(--transition-speed);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+#titulo {
+  display: none;
+  position: relative;
+}

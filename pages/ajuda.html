@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajuda</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="../minhaPagina.css">
+        <style>
+            html {
+                scroll-behavior: smooth; /* Torna o deslize suave ao clicar nos links */
+                scroll-padding-top: 80px; /* Cria um "espaço de segurança" no topo igual à altura da navbar */
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="../minhaPagina.html">
+                    <img src="../imagens/Logo RF.png" alt="Logótipo RF" height="40" class="me-2 rounded shadow-sm">
+                    <span class="fw-bold"><i class="bi bi-arrow-left-circle me-1"></i> Projeto UC 00622</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#navbar">Navbar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#navbar-brand">Navbar-brand</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tabelas">Tabelas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            
+        <main class="container py-5" style="margin-top: 80px">
+            <section id="navbar">
+                <h1>Classe <code>.navbar</code></h1>
+                <p>
+                    A <code>class="navbar"</code> é o alicerce de qualquer barra de navegação no Bootstrap. Ela é uma classe fundamental (ou estrutural) que diz ao Bootstrap: "Ei, este elemento é uma barra de navegação, prepare as regras de layout para ele".
+                </p>
+                <p>
+                    Pensando de forma simples, ela funciona como uma "caixa organizadora". Sozinha, ela faz o seguinte:
+                </p>
+                <ul>
+                    <li><strong>Ativa o Flexbox:</strong> Ela transforma o elemento em um container Flexbox. Isso faz com que o logotipo (brand), o botão de menu (hambúrguer) e os links se alinhem horizontalmente de forma automática.</li>
+                    <li><strong>Define o Espaçamento Padrão:</strong> Ela aplica margens internas (padding) e alinhamentos para que os elementos lá dentro não fiquem colados nas bordas.</li>
+                    <li><strong>Prepara o Layout Responsivo:</strong> Ela dita como os elementos devem se comportar espacialmente antes de decidir se vão encolher ou esticar em telas menores.</li>
+                </ul>
+                <p>
+                    Por que ela nunca anda sozinha?
+                    A classe navbar apenas cria a estrutura básica vazia. Para que ela ganhe vida, cor e o comportamento que você quer, você precisa combiná-la com outras classes. Veja o exemplo:
+                </p>
+                <div class="d-flex justify-content-center align-items-center mb-5">
+                    <div class="bg-dark text-light p-4 rounded-3 shadow w-100 " style="max-width: 800px;">
+                        <pre class="m-0"><code>&lt;nav class="navbar navbar-expand-lg bg-light navbar-light"&gt; ... &lt;/nav&gt;</code></pre>
+                    </div>
+                </div>
+                <!-- <br>
+                <br>
+                <br>
+                <br> -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <section id="glossario" class="mb-5">
+                            <p>Aqui está o papel de cada uma nessa combinação:</p>
+                            <dl class="row">
+                                <div class="row bg-secondary text-white fw-bold py-2 mb-3 align-items-center border-bottom border-3 border-secondary">
+                                    <dt class="col-md-3 text-center text-uppercase fs-5 m-0 pe-3">classe</dt>
+                                    <dt class="col-md-9 text-center text-uppercase fs-6 m-0 pe-3 text-nowrap">O que ela faz na prática?</dt>
+                                </div>
+
+                                <div class="row border-bottom mb-3 pb-2">   
+                                    <dt class="col-md-3" style="text-align: right;">navbar</dt>
+                                    <dd class="col-md-9">Cria a estrutura flexível básica (o esqueleto).</dd>
+                                </div>
+
+                                <div class="row border-bottom mb-3 pb-2">   
+                                    <dt class="col-md-3" style="text-align: right;">navbar-expand-lg</dt>
+                                    <dd class="col-md-9">Define em qual tamanho de tela os links aparecem abertos. Nesse caso, em telas grandes (lg), os links ficam horizontais; em telas de celular, eles se escondem atrás do botão de menu.</dd>
+                                </div>
+                                <div class="row border-bottom mb-3 pb-2">   
+                                    <dt class="col-md-3" style="text-align: right;">bg-light</dt>
+                                    <dd class="col-md-9">Define a cor de fundo (um cinza bem claro).</dd>
+                                </div>
+                                
+                                <div class="row border-bottom mb-3 pb-2">   
+                                    <dt class="col-md-3" style="text-align: right;">navbar-light</dt>
+                                    <dd class="col-md-9">Ajusta a cor dos textos dos links para que fiquem escuros e fáceis de ler sobre o fundo claro. (Nota: No Bootstrap 5.3+, isso mudou para atributos de tema como data-bs-theme="light", mas a lógica de contraste é a mesma).</dd>
+                                </div>
+                            </dl>
+                        </section>
+                    </div>
+
+                    <div class="col-md-6">
+                        <section id="manuais" class="mb-5">
+                        <h2 class="visually-hidden">Manuais</h2>
+                        <p>Visite também o website: <a href="https://w3schools.com" target="_blank" rel="noopener"> W3schools </a> </p>
+                        <p>Visualize também o nosso <a href="manual.html"> manual </a>. </p>
+                        </section>
+                    </div>
+                </div>
+
+
+            </section>
+            <hr class="border-primary border-3 opacity-50">
+            <section id="navbar-brand">
+                <h1>Classe <code>.navbar-brand</code></h1>
+                <p>A classe <code>.navbar-brand</code> é utilizada para destacar o nome do projeto, da empresa ou o <strong>logótipo</strong> dentro da barra de navegação. Ela aplica automaticamente uma estilização que garante que o texto ou imagem tenha um tamanho apropriado, margens corretas e um destaque visual em relação aos outros links do menu.
+                </p>
+                <p>
+                    Principais características:
+                </p>
+                <ul>
+                    <li><strong>Destaque Visual:</strong> Geralmente possui uma fonte ligeiramente maior ou em negrito para atrair a atenção do utilizador.</li>
+                    <li><strong>Alinhamento Vertical:</strong> Garante que o logótipo esteja perfeitamente alinhado ao centro da altura da navbar.</li>
+                    <li><strong>Link Amigável:</strong> É comum utilizá-la numa tag <code>&lt;a&gt;</code> para que o utilizador possa clicar e ser redirecionado para a página inicial.</li>
+                </ul>
+                
+                </p>
+            </section>
+
+            <hr class="border-primary border-3 opacity-50 my-5">
+
+            <section id="tabelas">
+                <h1><code>tabelas</code></h1>
+                <p>
+                    As tabelas no HTML são usadas para organizar dados estruturados em linhas e colunas (como uma planilha do Excel). Antigamente, elas eram usadas até para criar o layout de sites inteiros, mas hoje isso é um pecado capital: <strong> servem exclusivamente para dados tabulares.</strong>
+                </p>
+                <p>
+                    Para criar uma tabela, nós usamos um conjunto de tags que trabalham juntas de forma hierárquica. Vamos entender cada uma delas.
+                </p>
+
+                <h2>As Tags Básicas (O Esqueleto)</h2>
+                <p>
+                    Toda tabela padrão precisa, essencialmente, destas quatro tags:
+                </p>
+
+                <ul>
+                    <li>
+                        <code>&lt;table&gt;</code>: É a tag mãe. Ela avisa ao navegador: "Começa aqui uma tabela".
+                    </li>    
+                    <li>
+                        <code>&lt;tr&gt;</code> (Table Row): Define uma linha da tabela. Tudo o que estiver dentro dela representará uma linha horizontal.
+                    </li>
+                    <li>
+                        <code>&lt;th&gt;</code> (Table Heading): Define uma célula de cabeçalho. O texto dentro dela fica automaticamente em negrito e centralizado.
+                    </li>
+                    <li>
+                        <code>&lt;td&gt;</code> (Table Data): Define uma célula de dado comum. É aqui que vai o conteúdo real da tabela.
+                        </li>
+                    </ul>
+            </section>
+
+            <hr class="border-primary border-3 opacity-50">
+
+<!-- Códigos Bootstrap utilizados------------------------------------------------------------------------------------------------------------------->
+
+            <section id="bootstrap">
+                <h2 id="Codigos-Bootstrap-utilizados">Códigos Bootstrap utilizados</h2>
+                <p><strong>Entendendo cada tag (O que elas fazem?)</strong></p>
+                <ul>
+                    <li><code>&lt;table&gt;</code>: A tag principal que abre e fecha a tabela. No exemplo, usei a classe <code>.table</code> do Bootstrap para dar o visual limpo, <code>.table-striped</code> para zebrar as linhas e <code>.table-hover</code> para destacar a linha quando o mouse passa por cima.</li>
+
+                    <li><code>&lt;thead&gt;</code> (Table Head): Agrupa o cabeçalho. É onde você diz o que cada coluna significa.</li>
+
+                    <li><code>&lt;tbody&gt;</code> (Table Body): É o coração da tabela, onde ficam as linhas de dados reais.</li>
+                    <li><code>&lt;tfoot&gt;</code> (Table Foot): O rodapé, muito usado para exibir somatórios ou contagens.</li>
+                    <li><code>&lt;tr&gt;</code> (Table Row): Significa linha. Tudo o que estiver dentro de uma <code>&lt;tr&gt;</code> fará parte da mesma linha horizontal.</li>
+                    <li><code>&lt;th&gt;</code> (Table Header): Célula de título. O texto dentro dela fica em negrito por padrão. O atributo <code>scope="col"</code> avisa que ela é o título daquela coluna.</li>
+                    <li><code>&lt;td&gt;</code> (Table Data): Célula de dado comum. É onde você insere as informações normais da tabela.</li>
+                </ul>
+
+                <h3>Dicas do Bootstrap para Tabelas:</h3>
+                <ol>
+                    <li>
+                        <p>
+                            <strong>Sempre use o embrulho</strong> <code>.table-responsive</code>: Colocar a tabela dentro de uma <code>&ltdiv class="table-responsive"&gt</code> (como fiz no exemplo) impede que a tabela quebre o seu layout em celulares. Se ela for muito grande, o Bootstrap cria uma barra de rolagem horizontal apenas na tabela, mantendo o resto da página intacto.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <strong>Unir colunas (</strong><code>colspan</code><strong>)</strong>: No rodapé do exemplo, usei <code>colspan="3"</code>. Isso diz para aquela célula ocupar o espaço de 3 colunas combinadas, ideal para mensagens de totalizadores ou avisos.
+                        </p>
+                    </li>
+                </ol>
+                    
+        
+                <div class="tabela-responsive" >
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th class="w-25">Classes</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="opacity-50">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        opacity-50
+                                    </div>
+                                </th>
+
+                                <td class="text-start">
+                                    <p>
+                                        A propriedade opacity define o nível de opacidade de um elemento. 
+                                        O nível de opacidade descreve o nível de transparência, onde 1 não é nada transparente, .5 é 50% visível e 0 é totalmente transparente. 
+                                        Defina a opacidade de um elemento utilizando os utilitários <code>.opacity-{valor}</code>." 
+                                        
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr id="border-primary">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        border-primary
+                                    </div>
+                                </th>
+                                <td>
+                                    <div class="text-start">
+                                        No Bootstrap, a classe border-primary é responsável por definir a cor da borda de um elemento.
+                                        Por padrão, ela aplica a cor azul principal (chamada de cor Primary) que vem configurada no tema do Bootstrap.
+                                        Para que ela funcione corretamente, ela precisa ser usada em conjunto com a classe base border. Veja como funciona:
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+
+                            <tr id="my-5">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        my-5
+                                    </div>
+                                </th>
+
+                                <td>
+                                    <div class="text-start">
+                                        No Bootstrap, o termo my-5 é uma classe utilitária usada para aplicar margens verticais a um elemento.
+                                        <br>
+                                        Para entender exatamente o que ela faz, podemos dividir o nome em três partes:<br>
+                                        <br>
+                                        <ul>
+                                            <li><strong><code>m</code></strong> : Define que a propriedade é uma Margem (Margin).<br></li>
+                                            <li><strong><code>y</code></strong> : Define o eixo Vertical (eixo Y), ou seja, aplica a margem tanto no topo (top) quanto na base (bottom) ao mesmo tempo.<br></li>
+                                            <li><strong><code>5</code></strong> : É o nível do espaçamento dentro da escala padrão do Bootstrap (que vai de 0 a 5).</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr id="navbar-toggler">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        navbar-toggler
+                                    </div>
+                                </th>
+
+                                <td>
+                                    <div class="text-start">
+                                        <p>
+                                            Esse trecho de código é o <strong> botão "hambúrguer"</strong> do Bootstrap. Ele serve para mostrar ou esconder o menu de navegação quando o site é acessado por dispositivos menores, como celulares e tablets.
+                                        </p>
+
+                                        <p>
+                                            <code> navbar-toggler</code> : É a classe que estiliza o botão de alternância (toggle). 
+                                            <ul>
+                                                <li>Ela remove as bordas padrões de um botão comum, </li>
+                                                <li>aplica cantos levemente arredondados, </li>
+                                                <li>define o espaçamento interno (padding) </li>
+                                                <li>e diz ao Bootstrap que este botão deve sumir em telas grandes (computadores) e aparecer apenas em telas menores.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                             <tr id="navbar-toggler-icon">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        navbar-toggler-icon
+                                    </div>
+                                </th>
+
+                                <td>
+                                    <div class="text-start">
+                                        <p>
+                                            Aplicada na tag <strong>span</strong> <code> &ltspan class="navbar-toggler-icon"&gt &lt/span&gt;</code><span>, essa classe é responsável por desenhar visualmente aquelas três barrinhas horizontais (o ícone de hambúrguer). O Bootstrap faz isso de forma inteligente usando uma imagem de fundo SVG direto no CSS, o que significa que você não precisa baixar nenhuma imagem ou ícone externo para ele aparecer.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr id="data-bs-toggle">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        data-bs-toggle="collapse"
+                                    </div>
+                                </th>
+
+                                <td>
+                                    <div class="text-start">
+                                        <p>
+                                            Avisa ao JavaScript do Bootstrap qual é o tipo de comportamento esperado ao clicar ali. <br>
+                                            Nesse caso, ele diz: "Esse botão vai <strong>colapsar</strong> (esconder/mostrar) algum elemento".
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr id="data-bs-target">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        data-bs-target="#menuNavbar"
+                                    </div>
+                                </th>
+
+                                <td>
+                                    <div class="text-start">
+                                        <p>
+                                            Indica exatamente qual elemento o botão vai controlar.<br> 
+                                            O #menuNavbar funciona como um seletor de ID do CSS. <br>
+                                            Ou seja, em algum lugar do seu código existe uma tag (geralmente uma &ltdiv&gt ) com o <code> id="menuNavbar"</code>, e é ela que vai abrir e fechar.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                           
+                            <tr id="col-12">
+                                <th class="align-middle">
+                                    <div class="d-flex align-items-center justify-content-center border-3 border-primary rounded">
+                                        div class="col-12"
+                                    </div>
+                                </th>
+
+                                <td>
+                                    <div class="text-start">
+                                        <p>
+                                            faz parte do sistema de grelha (Grid System) do Bootstrap e serve para definir a largura de um elemento dentro de uma linha (row).
+                                            Em termos simples: ela faz com que a <div> ocupe 100% da largura disponível do ecrã (ou do elemento pai onde ela está inserida).
+                                            Como funciona a lógica por trás disso?
+                                            O Bootstrap divide o ecrã horizontalmente em 12 colunas invisíveis.
+                                            Quando você define o número junto à palavra col-, está a dizer ao framework quantas dessas 12 colunas aquele bloco deve ocupar:
+                                            col-12: Ocupa as 12 colunas (ou seja, 100% da largura).
+                                            col-6: Ocupa metade do espaço (50% da largura).
+                                            col-4: Ocupa um terço do espaço (33.33% da largura).
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-light py-4 mt-5 border-top">
+            <div class="container text-center">
+                <p class="text-muted mb-0">&copy; 2025 Rui Novais - Documentação de Apoio Web</p>
+            </div>
+        </footer>
+        
+        <!-- Scripts necessários para o funcionamento da Navbar no Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
